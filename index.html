@@ -54,19 +54,14 @@
       font-size: 14px;
       color: #555;
     }
-    .photo {
-      width: 170px;
-      height: 190px;
-      border: 1px solid #ccc;
-      background: #f3f5f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #777;
-      margin-bottom: 18px;
-      padding: 12px;
-    }
+    .profile-photo {
+  width: 170px;
+  height: 190px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  margin-bottom: 18px;
+  border-radius: 4px;
+}
     aside a, main a { color: #1769aa; }
     main h2 {
       color: #174a70;
@@ -115,9 +110,8 @@
 
 <div class="layout">
   <aside>
-    <div class="photo">
-      Add your photograph here
-    </div>
+    <img src="profile.jpeg" alt="Paras Vinubhai Maniya"
+     class="profile-photo">
     <p><strong>Postdoctoral Fellow</strong><br>
     Department of Mathematics<br>
     Indian Institute of Technology Delhi</p>
