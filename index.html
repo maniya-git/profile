@@ -2,217 +2,515 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paras Vinubhai Maniya | Academic Homepage</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #292929;
-      background: #fff;
-      line-height: 1.7;
-    }
-    header {
-      background: #174a70;
-      color: white;
-      padding: 28px 20px;
-    }
-    .header-inner, .layout {
-      max-width: 1050px;
-      margin: auto;
-    }
-    header h1 { margin: 0; font-size: 30px; }
-    header p { margin: 5px 0 0; color: #e3edf5; }
-    nav {
-      background: #f3f6f8;
-      border-bottom: 1px solid #ddd;
-      padding: 10px 20px;
-    }
-    nav div {
-      max-width: 1050px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-    }
-    nav a {
-      color: #174a70;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    nav a:hover { text-decoration: underline; }
-    .layout {
-      display: grid;
-      grid-template-columns: 235px 1fr;
-      gap: 42px;
-      padding: 35px 20px;
-    }
-    aside {
-      font-size: 14px;
-      color: #555;
-    }
-    .profile-photo {
-  width: 200px;
-  height: 280px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  margin-bottom: 18px;
-  border-radius: 4px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paras Vinubhai Maniya | Academic Homepage</title>
+<meta name="description" content="Academic homepage of Paras Vinubhai Maniya, Postdoctoral Fellow at IIT Delhi.">
+
+<style>
+:root {
+  --navy: #174a70;
+  --blue: #246b96;
+  --text: #303b46;
+  --muted: #697783;
+  --border: #dce4e9;
+  --light: #f5f8fa;
 }
-    aside a, main a { color: #1769aa; }
-    main h2 {
-      color: #174a70;
-      border-bottom: 1px solid #dce3e8;
-      padding-bottom: 5px;
-      margin-top: 0;
-      font-size: 23px;
-    }
-    main h3 { margin-bottom: 4px; font-size: 17px; }
-    section { margin-bottom: 35px; scroll-margin-top: 20px; }
-    .muted { color: #666; }
-    footer {
-      border-top: 1px solid #ddd;
-      text-align: center;
-      padding: 20px;
-      color: #666;
-      font-size: 13px;
-    }
-    li { margin-bottom: 8px; }
-    @media (max-width: 650px) {
-      .layout { grid-template-columns: 1fr; gap: 25px; }
-      .photo { width: 145px; height: 160px; }
-      header h1 { font-size: 25px; }
-    }
-  </style>
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Header */
+header {
+  background: var(--navy);
+  color: white;
+  padding: 35px 22px;
+}
+.header-inner {
+  max-width: 1120px;
+  margin: auto;
+}
+header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+}
+header p {
+  margin: 8px 0 0;
+  color: #e5edf3;
+  font-size: 16px;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 5px #00000008;
+}
+.nav-inner {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav a {
+  display: block;
+  padding: 13px 12px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+}
+nav a:hover {
+  background: var(--light);
+  text-decoration: none;
+}
+
+/* Main layout */
+.container {
+  max-width: 1120px;
+  margin: auto;
+  padding: 38px 22px 60px;
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  gap: 45px;
+}
+
+/* Sidebar */
+aside {
+  font-size: 14px;
+  color: #46535e;
+}
+.profile-photo {
+  width: 190px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 20px;
+}
+.side-heading {
+  color: var(--navy);
+  font-weight: bold;
+  margin: 18px 0 5px;
+}
+.side-block { margin-bottom: 15px; }
+
+/* Content */
+section {
+  margin-bottom: 40px;
+}
+section h2 {
+  color: var(--navy);
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin: 0 0 17px;
+}
+section h3 {
+  color: #304d62;
+  font-size: 17px;
+  margin: 18px 0 4px;
+}
+section p { margin: 0 0 13px; }
+
+ul { padding-left: 23px; }
+li { margin-bottom: 8px; }
+
+/* Publications */
+.publications {
+  padding-left: 25px;
+}
+.publications li {
+  margin-bottom: 19px;
+  padding-left: 5px;
+  overflow-wrap: anywhere;
+}
+.publications strong { color: #243c50; }
+.journal { font-style: italic; }
+.rank {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Career */
+.position { margin-bottom: 22px; }
+.date {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .profile-photo {
+    width: 155px;
+    height: 180px;
+  }
+  header h1 { font-size: 27px; }
+  .nav-inner { justify-content: center; }
+  nav a { padding: 10px 8px; font-size: 12px; }
+}
+</style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-inner">
     <h1>Paras Vinubhai Maniya</h1>
-    <p>Postdoctoral Fellow | Department of Mathematics, IIT Delhi</p>
+    <p>Postdoctoral Fellow | Department of Mathematics | IIT Delhi</p>
   </div>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
-  <div>
-    <a href="#about">Home</a>
+  <div class="nav-inner">
+    <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="#education">Education</a>
     <a href="#publications">Publications</a>
+    <a href="#career">Career &amp; Education</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#awards">Awards</a>
     <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<div class="layout">
-  <aside>
-    <img src="profile.jpeg" alt="Paras Vinubhai Maniya"
-     class="profile-photo">
-    <p><strong>Postdoctoral Fellow</strong><br>
-    Department of Mathematics<br>
-    Indian Institute of Technology Delhi</p>
+<div class="container">
 
-    <p><strong>Research interests</strong><br>
+<!-- LEFT SIDEBAR -->
+<aside>
+
+  <img src="profile.jpeg"
+       alt="Paras Vinubhai Maniya"
+       class="profile-photo">
+
+  <div class="side-block">
+    <div class="side-heading">Current Position</div>
+    Postdoctoral Fellow<br>
+    Department of Mathematics<br>
+    Indian Institute of Technology Delhi<br>
+    New Delhi, India
+  </div>
+
+  <div class="side-block">
+    <div class="side-heading">Research Interests</div>
     Structural Graph Theory<br>
     Domination in Graphs<br>
     Graph Coloring<br>
-    Pursuit-Evasion Games</p>
+    Pursuit-Evasion Games
+  </div>
 
-    <p><strong>Email</strong><br>
-    <a href="mailto:YOUR_EMAIL@example.com">
-      YOUR_EMAIL@example.com
-    </a></p>
+  <div class="side-block">
+    <div class="side-heading">Email</div>
+    <a href="mailto:maniyaparas9999@gmail.com">
+      maniyaparas9999@gmail.com
+    </a>
+  </div>
 
-    <p><a href="#publications">Publications</a></p>
-    <p><a href="#cv">Curriculum Vitae</a></p>
-  </aside>
+  <div class="side-block">
+    <div class="side-heading">Academic Profiles</div>
+    <a href="https://sites.google.com/view/parasmaniya"
+       target="_blank">Previous Homepage</a><br>
+    <!-- Add your Google Scholar, ORCID and LinkedIn URLs here -->
+  </div>
 
-  <main>
-    <section id="about">
-      <h2>Welcome</h2>
-      <p>
-        Welcome to my academic homepage. I am a Postdoctoral Fellow
-        in the Department of Mathematics at the Indian Institute of
-        Technology Delhi (IIT Delhi).
-      </p>
-      <p>
-        My research is in graph theory, a branch of combinatorics and
-        theoretical computer science. I am particularly interested in
-        structural graph theory and domination problems, including
-        relationships between graph parameters under structural
-        restrictions on graphs.
-      </p>
-    </section>
+</aside>
 
-    <section id="research">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Domination and related parameters in graphs.</li>
-        <li>Structural graph theory and forbidden induced subgraphs.</li>
-        <li>Graph coloring and related problems.</li>
-        <li>Pursuit-evasion games on graphs, including Cops and Robbers.</li>
-      </ul>
-    </section>
+<!-- MAIN CONTENT -->
+<main>
 
-    <section id="education">
-      <h2>Education</h2>
-      <h3>Ph.D. in Mathematics</h3>
-      <p class="muted">2026 | IIT (ISM) Dhanbad, India</p>
-      <p>
-        Thesis: <em>Structural Bounds and Relations of Some
-        Domination Variants in Graphs</em><br>
-        Supervisor: Prof. Dinabandhu Pradhan
-      </p>
+<!-- ABOUT -->
+<section id="about">
+<h2>About</h2>
 
-      <h3>Master's in Mathematics</h3>
-      <p class="muted">South Asian University, India</p>
-      <p>Project: Energy of Graphs.</p>
-    </section>
+<p>
+Welcome to my academic homepage. I am a Postdoctoral Fellow
+in the Department of Mathematics at the Indian Institute of
+Technology Delhi (IIT Delhi), India.
+</p>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <p>
-        A list of my research publications will be added here.
-        Please see my research profiles for publication details.
-      </p>
-      <ul>
-        <li>Replace this item with a publication title, coauthors,
-          journal, year, and a link to the paper.</li>
-        <li>Add your other published and accepted papers here.</li>
-      </ul>
-    </section>
+<p>
+I received my Ph.D. in Mathematics from the Indian Institute
+of Technology (ISM) Dhanbad in 2026 under the supervision
+of Prof. Dinabandhu Pradhan.
+</p>
 
-    <section id="cv">
-      <h2>Curriculum Vitae</h2>
-      <p>
-        My academic CV is available upon request.
-        To provide a downloadable CV, upload your PDF to this
-        repository and link it here.
-      </p>
-      <!-- Later, change this to:
-      <a href="cv.pdf" target="_blank">Download my CV (PDF)</a>
-      -->
-    </section>
+<p>
+My research lies in graph theory, which is a part of
+combinatorics and theoretical computer science. I am
+particularly interested in structural graph theory,
+domination problems, graph coloring, and pursuit-evasion
+games on graphs.
+</p>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Department of Mathematics<br>
-        Indian Institute of Technology Delhi<br>
-        New Delhi, India
-      </p>
-      <p>Email: <a href="mailto:YOUR_EMAIL@example.com">
-        YOUR_EMAIL@example.com</a></p>
-    </section>
-  </main>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+<h2>Research</h2>
+
+<p>
+My research focuses on structural properties of graphs and
+their applications to problems involving graph parameters.
+In particular, I am interested in the following topics:
+</p>
+
+<ul>
+<li>
+<strong>Domination in Graphs:</strong>
+Domination and its variants, including secure domination,
+paired domination, double domination, disjunctive domination,
+and locating-dominating problems.
+</li>
+
+<li>
+<strong>Structural Graph Theory:</strong>
+Structural properties and parameter bounds in graph classes
+defined by forbidden induced subgraphs.
+</li>
+
+<li>
+<strong>Graph Coloring:</strong>
+Coloring problems and structural aspects of restricted
+graph classes.
+</li>
+
+<li>
+<strong>Pursuit-Evasion Games:</strong>
+Cops and Robbers games and related pursuit-evasion problems
+on graphs.
+</li>
+</ul>
+
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+<h2>Publications</h2>
+
+<p>
+The following is a list of my research publications.
+</p>
+
+<ol class="publications">
+
+<li>
+P. Maniya and D. Pradhan,
+Towards the conjecture on domination versus edge domination
+in graphs,
+<span class="journal">Bull. Malays. Math. Sci. Soc.</span>
+<strong>47</strong> (2024), 71.
+<span class="rank">SCIE, Q1.</span>
+<a href="https://doi.org/10.1007/s40840-023-01626-8"
+target="_blank">DOI</a>.
+</li>
+
+<li>
+M. A. Henning, P. Maniya, and D. Pradhan,
+Paired versus double domination in forbidden graph classes,
+<span class="journal">Comput. Appl. Math.</span>
+<strong>44</strong> (2025), 21.
+<span class="rank">SCIE, Q1.</span>
+<a href="https://doi.org/10.1007/s40314-024-03025-6"
+target="_blank">DOI</a>.
+</li>
+
+<li>
+U. K. Gupta, M. A. Henning, P. V. Maniya, and D. Pradhan,
+Secure domination on P5-free graphs,
+<span class="journal">Discrete Math.</span>
+<strong>349</strong> (2026), 114905.
+<span class="rank">SCIE, Q2.</span>
+<a href="https://doi.org/10.1016/j.disc.2025.114905"
+target="_blank">DOI</a>.
+</li>
+
+<li>
+F. Foucaud, P. V. Maniya, K. Paul, and D. Pradhan,
+Locating-dominating partitions for some classes of graphs,
+<span class="journal">Discrete Math.</span>
+<strong>349</strong> (2026), 114886.
+<span class="rank">SCIE, Q2.</span>
+<a href="https://doi.org/10.1016/j.disc.2025.114886"
+target="_blank">DOI</a>.
+</li>
+
+<li>
+M. A. Henning, P. V. Maniya, and D. Pradhan,
+Disjunctive domination in maximal outerplanar graphs,
+<span class="journal">Discrete Appl. Math.</span>
+<strong>385</strong> (2026), 24–61.
+<span class="rank">SCIE, Q3.</span>
+<a href="https://doi.org/10.1016/j.dam.2025.12.056"
+target="_blank">DOI</a>.
+</li>
+
+<li>
+M. A. Henning, P. V. Maniya, and D. Pradhan,
+Domination number versus packing number in graphs,
+<span class="journal">Discuss. Math. Graph Theory</span>
+<strong>46</strong> (2026), 655–676.
+<span class="rank">SCIE, Q2.</span>
+<a href="https://doi.org/10.7151/dmgt.2624"
+target="_blank">DOI</a>.
+</li>
+
+<li>
+M. A. Henning, P. V. Maniya, and D. Pradhan,
+Disjunctive total domination in maximal outerplanar graphs,
+<span class="journal">Aequat. Math.</span>
+<strong>100</strong> (2026), 57.
+<span class="rank">SCIE, Q2.</span>
+<a href="https://doi.org/10.1007/s00010-026-01301-w"
+target="_blank">DOI</a>.
+</li>
+
+</ol>
+</section>
+
+<!-- CAREER AND EDUCATION -->
+<section id="career">
+<h2>Career and Education</h2>
+
+<div class="position">
+<h3>Postdoctoral Fellow</h3>
+<div class="date">August 2026 – Present</div>
+Department of Mathematics,
+Indian Institute of Technology Delhi, India.
+</div>
+
+<div class="position">
+<h3>Research Visit</h3>
+<div class="date">Three months</div>
+Indian Institute of Technology Guwahati, India.
+</div>
+
+<div class="position">
+<h3>Ph.D. in Mathematics</h3>
+<div class="date">2026</div>
+Indian Institute of Technology (ISM) Dhanbad, India.<br>
+<strong>Thesis:</strong>
+<em>Structural Bounds and Relations of Some Domination
+Variants in Graphs.</em><br>
+<strong>Supervisor:</strong> Prof. Dinabandhu Pradhan.
+</div>
+
+<div class="position">
+<h3>Master's in Mathematics</h3>
+South Asian University, India.<br>
+<strong>Project:</strong> Energy of Graphs.
+</div>
+
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+<h2>Teaching</h2>
+
+<p>
+I have been involved in academic teaching and student
+assistance in mathematics. Further details of courses,
+teaching responsibilities, and tutorials will be added here.
+</p>
+
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+<h2>Awards and Fellowships</h2>
+
+<ul>
+<li>Institute Postdoctoral Fellowship, IIT Delhi (2026).</li>
+<li>Graduate Aptitude Test in Engineering (GATE), All India Rank 180.</li>
+<li>SPARC Fellowship, Office of the Vice President for Research,
+University of Southern California (2013).</li>
+</ul>
+
+</section>
+
+<!-- CV -->
+<section id="cv">
+<h2>Curriculum Vitae</h2>
+
+<p>
+You can download my academic CV using the link below.
+</p>
+
+<a href="cv.pdf" target="_blank">
+Download Curriculum Vitae (PDF)
+</a>
+
+<p style="font-size:13px;color:#697783;">
+Please upload your CV to the repository with the filename
+<strong>cv.pdf</strong> for this link to work.
+</p>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+
+<p>
+<strong>Paras Vinubhai Maniya</strong><br>
+Postdoctoral Fellow<br>
+Department of Mathematics<br>
+Indian Institute of Technology Delhi<br>
+Hauz Khas, New Delhi – 110016, India.
+</p>
+
+<p>
+<strong>Email:</strong>
+<a href="mailto:maniyaparas9999@gmail.com">
+maniyaparas9999@gmail.com
+</a>
+</p>
+
+</section>
+
+</main>
 </div>
 
 <footer>
-  © 2026 Paras Vinubhai Maniya
+© 2026 Paras Vinubhai Maniya | Academic Homepage
 </footer>
 
 </body>
